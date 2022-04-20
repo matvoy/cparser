@@ -1,6 +1,6 @@
-CREATE TABLE blocks_all ON CLUSTER cluster_1 as blocks ENGINE = Distributed(cluster_1, default, blocks, rand());
-CREATE TABLE txs_all ON CLUSTER cluster_1 as txs ENGINE = Distributed(cluster_1, default, txs, rand());
-CREATE TABLE transfers_all ON CLUSTER cluster_1 as transfers ENGINE = Distributed(cluster_1, default, transfers, rand());
+CREATE TABLE IF NOT EXISTS blocks_all ON CLUSTER cluster_1 as blocks ENGINE = Distributed(cluster_1, default, blocks, rand());
+CREATE TABLE IF NOT EXISTS txs_all ON CLUSTER cluster_1 as txs ENGINE = Distributed(cluster_1, default, txs, rand());
+CREATE TABLE IF NOT EXISTS transfers_all ON CLUSTER cluster_1 as transfers ENGINE = Distributed(cluster_1, default, transfers, rand());
 
 CREATE OR REPLACE VIEW transfer_view ON CLUSTER cluster_1 AS SELECT 
 tr.id as id,
