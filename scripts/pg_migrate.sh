@@ -1,0 +1,1 @@
+docker run -v $(pwd)/db/pg_migrations:/migrations --net cparser_cparser migrate/migrate -path=/migrations/ -database "postgres://postgres:postgres@cparser-postgres:5432/postgres?sslmode=disable" $*
